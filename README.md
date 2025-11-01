@@ -1,27 +1,27 @@
-#  Orgzaar Mini API Projesi
+# Orgzaar Mini API Projesi
 
 [![Python](https://img.shields.io/badge/Python-3.13+-blue.svg)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)](https://flask.palletsprojects.com/)
 [![Tests](https://img.shields.io/badge/Tests-13%20Passed-brightgreen.svg)](./tests/)
 
-Etkinlik hizmeti listeleme ve rezervasyon talebi alma işlevlerine sahip profesyonel Flask API. Case study kapsamında geliştirilmiştir.
+Etkinlik hizmeti listeleme ve rezervasyon talebi alma işlevlerine sahip profesyonel Flask API. 
 
-##  Gereksinimler
+## Gereksinimler
 
 - **Python 3.7+** 
 - **pip** (Python package manager)
 
-## ⚡ Kurulum ve Çalıştırma (2 Yöntem)
+## Kurulum ve Çalıştırma (2 Yöntem)
 
-###  **YÖNTEMDü1: Git ile (Önerilen)**
+### YÖNTEM 1: Git ile (Önerilen)
 ```bash
 git clone https://github.com/turksevenalperen/orgzaar_api.git
 cd orgzaar_api
 pip install -r requirements.txt
 ```
 
-###  **YÖNTEM 2: ZIP İndirme (Git Olmayanlara)**
-1. **ZIP İndir:** https://github.com/turksevenalperen/orgzaar_api/archive/refs/heads/main.zip
+### YÖNTEM 2: ZIP İndirme (Git Olmayanlara)
+1. **ZIP İndir** 
 2. **Klasörü Aç:** `orgzaar_api-main` klasörüne git
 3. **Terminal Aç:** Klasörde PowerShell/CMD aç
 4. **Kurulum:**
@@ -29,90 +29,39 @@ pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-##  **API'yi Çalıştır**
+## API'yi Çalıştır
 ```bash
 python app.py
 ```
 
-##  Özellikler## Çalıştırma
+**Görmesi Gereken:**
+```
+* Running on http://localhost:5000
+* Press CTRL+C to quit
+```
 
-```bash
+## Özellikler
 
--  **Flask Blueprints** - Modüler ve ölçeklenebilir yapıpython app.py
+- **Flask Blueprints** - Modüler ve ölçeklenebilir yapı
+- **Comprehensive Validation** - Gelişmiş veri doğrulama sistemi
+- **Professional Logging** - RotatingFileHandler ile log yönetimi
+- **Unit Testing** - %100 test coverage (13 test)
+- **Error Handling** - Detaylı hata yönetimi ve raporlama
+- **RESTful Design** - Standart HTTP kodları ve JSON formatları
 
--  **Comprehensive Validation** - Gelişmiş veri doğrulama sistemi```
+## Endpoints
 
--  **Professional Logging** - RotatingFileHandler ile log yönetimi
-
--  **Unit Testing** - %100 test coverage (13 test)API `http://localhost:5000` adresinde çalışır.
-
--  **Error Handling** - Detaylı hata yönetimi ve raporlama
-
--  **RESTful Design** - Standart HTTP kodları ve JSON formatları## Endpoints
-
-
-
-##  Gereksinimler### GET /api/v1/services
-
+### GET /api/v1/services
 Hizmetleri listeler.
 
-- Python 3.13+
+### POST /api/v1/bookings
+Rezervasyon talebi oluşturur.
 
-- Flask 2.3.3### POST /api/v1/bookings
+## Hızlı Test
 
-- pytest 7.4.3Rezervasyon talebi oluşturur.
+### Browser'da Test Et
 
-
-
-##  Hızlı BaşlangıçÖrnek:
-
-```json
-
-### 1. Kurulum{
-
-```bash  "service_ids": [1, 3],
-
-# Bağımlılıkları yükle  "event_date": "2025-12-24",
-
-pip install -r requirements.txt  "notes": "Yılbaşı kutlaması"
-
-```}
-
-```
-
-### 2. Çalıştırma
-
-```bash## Testler
-
-# Uygulamayı başlat```bash
-
-python app.pypytest tests/ -v
-
-``````
-
-
-
-API `http://localhost:5000` adresinde çalışacaktır.## Özellikler
-
-
-
-### 3. Test Etme- Flask Blueprints
-
-```bash- Veri doğrulama
-
-# Tüm testleri çalıştır- Hata loglama
-
-pytest tests/ -v- Unit testler
-```
-
-##  API Dokumentasyonu
-
-###  Ana Sayfa
-```http
-GET http://localhost:5000/
-```
-
-**Yanıt:**
+**Ana Sayfa:** http://localhost:5000
 ```json
 {
   "message": "Orgzaar API'ye hoş geldiniz!",
@@ -124,12 +73,7 @@ GET http://localhost:5000/
 }
 ```
 
-###  Hizmetleri Listele
-```http
-GET http://localhost:5000/api/v1/services
-```
-
-**Yanıt:**
+**Hizmetler:** http://localhost:5000/api/v1/services
 ```json
 [
   {
@@ -165,7 +109,19 @@ GET http://localhost:5000/api/v1/services
 ]
 ```
 
-###  Rezervasyon Oluştur
+### Unit Testleri
+```bash
+pytest tests/ -v
+```
+
+**Beklenen:**
+```
+============= 13 passed in 0.94s =============
+```
+
+## API Dokumentasyonu
+
+### Rezervasyon Oluştur
 ```http
 POST http://localhost:5000/api/v1/bookings
 Content-Type: application/json
@@ -188,24 +144,24 @@ Content-Type: application/json
 }
 ```
 
-## 🔍 Validation Kuralları
+## Validation Kuralları
 
 ### service_ids
--  **Zorunlu alan**
--  **Liste formatında olmalı**
--  **Boş liste kabul edilir**
+- **Zorunlu alan**
+- **Liste formatında olmalı**
+- **Boş liste kabul edilir**
 
 ### event_date
--  **Zorunlu alan**
--  **YYYY-MM-DD formatında**
--  **Gelecek tarih olmalı**
--  **datetime.strptime ile doğrulanır**
+- **Zorunlu alan**
+- **YYYY-MM-DD formatında**
+- **Gelecek tarih olmalı**
+- **datetime.strptime ile doğrulanır**
 
 ### notes
--  **Opsiyonel alan**
--  **Herhangi bir string değer**
+- **Opsiyonel alan**
+- **Herhangi bir string değer**
 
-##  Hata Yanıtları
+## Hata Yanıtları
 
 ### 400 Bad Request - Validation Hatası
 ```json
@@ -231,18 +187,18 @@ Content-Type: application/json
 }
 ```
 
-##  Test Senaryoları
+## Test Senaryoları
 
 API'yi test etmek için aşağıdaki PowerShell komutlarını kullanabilirsiniz:
 
-###  Başarılı Rezervasyon
+### Başarılı Rezervasyon
 ```powershell
 $headers = @{"Content-Type" = "application/json"}
 $body = '{"service_ids": [1, 3], "event_date": "2025-12-25", "notes": "Test rezervasyon"}'
 Invoke-RestMethod -Uri "http://localhost:5000/api/v1/bookings" -Method POST -Headers $headers -Body $body
 ```
 
-###  Geçersiz Tarih Formatı
+### Geçersiz Tarih Formatı
 ```powershell
 $headers = @{"Content-Type" = "application/json"}
 $body = '{"service_ids": [1], "event_date": "25-12-2025"}'
@@ -253,7 +209,7 @@ try {
 }
 ```
 
-###  Geçmiş Tarih
+### Geçmiş Tarih
 ```powershell
 $headers = @{"Content-Type" = "application/json"}
 $body = '{"service_ids": [1], "event_date": "2024-01-01"}'
@@ -264,7 +220,7 @@ try {
 }
 ```
 
-##  Unit Test Sonuçları
+## Unit Test Sonuçları
 
 ```bash
 ============================================= test session starts =============================================
@@ -287,7 +243,7 @@ tests/test_api.py::TestErrorHandlers::test_home_page PASSED                     
 ============================================= 13 passed in 0.94s =============================================
 ```
 
-##  Proje Yapısı
+## Proje Yapısı
 
 ```
 orgzaar_api/
@@ -304,7 +260,7 @@ orgzaar_api/
     └── orgzaar_api.log   # Uygulama logları
 ```
 
-##  Loglama
+## Loglama
 
 Uygulama `logs/orgzaar_api.log` dosyasına aşağıdaki bilgileri kaydeder:
 
@@ -318,4 +274,5 @@ Uygulama `logs/orgzaar_api.log` dosyasına aşağıdaki bilgileri kaydeder:
 ```
 2025-11-01 16:08:12,879 INFO: Rezervasyon oluşturuldu - ID: 5678, Tarih: 2025-12-25, Hizmetler: [1, 3] [in routes.py:89]
 ```
+
 
