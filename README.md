@@ -20,7 +20,7 @@ cd orgzaar_api
 pip install -r requirements.txt
 ```
 
-### YÖNTEM 2: ZIP İndirme (Git Olmayanlara)
+### YÖNTEM 2: ZIP İndirme
 1. **ZIP İndir** 
 2. **Klasörü Aç:** `orgzaar_api-main` klasörüne git
 3. **Terminal Aç:** Klasörde PowerShell/CMD aç
