@@ -2,19 +2,46 @@
 
 
 
-[![Python](https://img.shields.io/badge/Python-3.13+-blue.svg)](https://python.org)Etkinlik hizmeti listeleme ve rezervasyon talebi alma işlevlerine sahip Flask API.
 
-[![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)](https://flask.palletsprojects.com/)
 
-[![Tests](https://img.shields.io/badge/Tests-13%20Passed-brightgreen.svg)](./tests/)## Kurulum
+Etkinlik hizmeti listeleme ve rezervasyon talebi alma işlevlerine sahip profesyonel Flask API.
 
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)```bash
 
+Etkinlik hizmeti listeleme ve rezervasyon talebi alma işlevlerine sahip profesyonel Flask API. Case study kapsamında geliştirilmiştir.
+
+## 📋 Gereksinimler
+
+- **Python 3.7+** (Python kurulu olması gerekiyor)
+- **pip** (Python package manager)
+- **Git** (projeyi indirmek için)
+
+## ⚡ Kurulum ve Çalıştırma (Ali İçin!)
+
+### 1️⃣ **Projeyi İndir**
+```bash
+# GitHub'dan projeyi klonla
+git clone https://github.com/turksevenalperen/orgzaar_api.git
+
+# Proje klasörüne git
+cd orgzaar_api
+```
+
+### 2️⃣ **Python Bağımlılıklarını Yükle**
+```bash
+# Gerekli paketleri yükle
 pip install -r requirements.txt
+```
 
-Etkinlik hizmeti listeleme ve rezervasyon talebi alma işlevlerine sahip profesyonel Flask API. Case study kapsamında geliştirilmiştir.```
+**Kurulacaklar:**
+- Flask==2.3.3
+- pytest==7.4.3  
+- pytest-flask==1.3.0
 
-
+### 3️⃣ **API'yi Çalıştır**
+```bash
+# Uygulamayı başlat
+python app.py
+```
 
 ## 🚀 Özellikler## Çalıştırma
 
@@ -301,19 +328,3 @@ Uygulama `logs/orgzaar_api.log` dosyasına aşağıdaki bilgileri kaydeder:
 2025-11-01 16:08:12,879 INFO: Rezervasyon oluşturuldu - ID: 5678, Tarih: 2025-12-25, Hizmetler: [1, 3] [in routes.py:89]
 ```
 
-## 🎯 Case Study Gereksinimlerini Karşılama
-
-- ✅ **Kurulum** - Flask Blueprints ile modüler yapı
-- ✅ **GET /api/v1/services** - 5 hizmet ile tam format
-- ✅ **POST /api/v1/bookings** - Kapsamlı validation
-- ✅ **Bonus: Flask Blueprints** - Professional yapı
-- ✅ **Bonus: Hata Loglaması** - RotatingFileHandler
-- ✅ **Bonus: Unit Testler** - 13 comprehensive test
-
-## 👨‍💻 Geliştirici
-
-Bu proje, Orgzaar case study kapsamında Flask ve modern Python geliştirme pratikleri kullanılarak geliştirilmiştir.
-
----
-
-**⚡ Ready for Production!** 🚀
